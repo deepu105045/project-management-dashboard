@@ -1,0 +1,18 @@
+<mat-grid-list cols="12" rowHeight="850px" gutterSize="10px">
+  <mat-grid-tile [colspan]=2 class="projects">
+    <mat-grid-tile-header>Projects</mat-grid-tile-header>
+
+    <div class="container">
+
+    <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+      <mat-chip *ngFor="let chip of availableColors" selected [color]="chip.color">
+        {{chip.name}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  </mat-grid-tile>
+  <mat-grid-tile class="status" *ngFor="let tile of tiles" [colspan]="2" [style.background]="tile.color">
+    <mat-grid-tile-header>{{tile.text}}</mat-grid-tile-header>
+  </mat-grid-tile>
+</mat-grid-list>
